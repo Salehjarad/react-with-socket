@@ -1,6 +1,5 @@
 import React, { useState, useEffect} from 'react';
 import axios from 'axios';
-import { Redirect } from 'react-router-dom';
 
 
 const style = {
@@ -50,9 +49,10 @@ const Login = props => {
     }, [])
 
     const submitForm = () => {
+        console.log('ss')
         axios({
             method: 'post',
-            url: 'http://localhost:8090/users/login',
+            url: 'http://192.168.1.3:8090/users/login',
             headers: {'Content-Type': 'application/json'},
             data: {
                 email: values.email,
